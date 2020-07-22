@@ -1,9 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 
+import CategoryCard from '../atoms/CategoryCard';
+
 const Categories = ({navigation}) => {
   return (
     <View style={styles.container}>
+      <CategoryCard />
       <Text>Categories</Text>
       <Button
         title="Go to Products"
