@@ -1,11 +1,15 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
-    <View>
-      <Text>Vending Machine App</Text>
-    </View>
+    <NavigationContainer>
+      <View>
+        <Text>Vending Machine App</Text>
+      </View>
+    </NavigationContainer>
   );
 };
 
