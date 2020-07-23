@@ -1,17 +1,39 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
-import CategoryCard from '../atoms/CategoryCard';
+import CategoriesList from '../molecules/CategoriesList';
 
 const Categories = ({navigation}) => {
+  const catList = [
+    {
+      title: 'Drinks',
+      icon: 'glass-mug',
+    },
+    {
+      title: 'Fruit',
+      icon: 'food-apple',
+    },
+    {
+      title: 'Snacks',
+      icon: 'food-croissant',
+    },
+    {
+      title: 'Pasta',
+      icon: 'pasta',
+    },
+    {
+      title: 'Burgers',
+      icon: 'hamburger',
+    },
+    {
+      title: 'Pizza',
+      icon: 'pizza',
+    },
+  ];
+
   return (
     <View style={styles.container}>
-      <CategoryCard />
-      <Text>Categories</Text>
-      <Button
-        title="Go to Products"
-        onPress={() => navigation.navigate('Products')}
-      />
+      <CategoriesList data={catList} />
     </View>
   );
 };
@@ -19,8 +41,6 @@ const Categories = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 

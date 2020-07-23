@@ -1,37 +1,52 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useNavigation} from '@react-navigation/native';
 
-import {typography} from '../styles';
+import {typography, spacing} from '../styles';
 
-const CategoryCard = () => {
+const CategoryCard = ({title, icon}) => {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.container}>
-      <Icon name="hamburger" style={styles.icon} />
-      <Text style={styles.text}>Drinks</Text>
-    </View>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate('Products', {category: title})}>
+      <View style={styles.iconContainer}>
+        <Icon name={icon} style={styles.icon} />
+      </View>
+      <Text style={styles.text}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#3ec1d3',
     borderRadius: 10,
-    padding: 50,
+    padding: 45,
+    margin: 10,
+    ...spacing.centered,
   },
   text: {
     color: 'whitesmoke',
     fontWeight: 'bold',
     fontSize: 40,
+    marginTop: 10,
     ...typography.shadow,
   },
   icon: {
     margin: 20,
-    fontSize: 100,
-    color: 'whitesmoke',
+    fontSize: 130,
+    color: '#3ec1d3',
     ...typography.shadow,
+  },
+  iconContainer: {
+    backgroundColor: 'whitesmoke',
+    height: 180,
+    width: 180,
+    borderRadius: 90,
+    ...spacing.centered,
   },
 });
 
