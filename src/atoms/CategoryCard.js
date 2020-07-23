@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     padding: 45,
     margin: 10,
     ...spacing.centered,
+    ...spacing.shadow,
   },
   text: {
     color: 'whitesmoke',
