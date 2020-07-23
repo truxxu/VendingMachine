@@ -4,13 +4,13 @@ import {useNavigation} from '@react-navigation/native';
 
 import {typography, spacing} from '../styles';
 
-const ProductCard = () => {
+const ProductCard = (props) => {
   const navigation = useNavigation();
 
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => navigation.navigate('SelectedProduct')}>
+      onPress={() => navigation.navigate('SelectedProduct', {...props})}>
       <View>
         <Image
           style={styles.image}
@@ -20,7 +20,7 @@ const ProductCard = () => {
         />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.text}>Product</Text>
+        <Text style={styles.text}>{props.title}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   textContainer: {
     ...spacing.centered,
     padding: 20,
-    maxHeight: 100,
+    minHeight: 105,
     maxWidth: 230,
     backgroundColor: '#3ec1d3',
     borderBottomLeftRadius: 8,
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 25,
+    textAlign: 'center',
     fontWeight: 'bold',
     color: 'whitesmoke',
     ...typography.shadow,
