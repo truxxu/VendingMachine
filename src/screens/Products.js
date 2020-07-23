@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 
-const Products = ({navigation}) => {
+const Products = ({navigation, route}) => {
+  const {category} = route.params;
+
   return (
     <View style={styles.container}>
-      <Text>Products</Text>
+      <Text>Products for category {category}</Text>
       <Button
         title="Go to SelectedProduct"
         onPress={() => navigation.navigate('SelectedProduct')}
