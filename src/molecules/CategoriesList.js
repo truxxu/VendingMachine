@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 
 import {spacing} from '../styles';
 import CategoryCard from '../atoms/CategoryCard';
@@ -11,7 +11,11 @@ const CategoriesList = ({data}) => {
     });
   };
 
-  return <View style={styles.container}>{renderCategories()}</View>;
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      {renderCategories()}
+    </ScrollView>
+  );
 };
 
 const styles = StyleSheet.create({
