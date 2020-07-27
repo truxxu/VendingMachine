@@ -38,10 +38,12 @@ const productList = [
   },
 ];
 
-const Products = ({navigation}) => {
+const Products = ({navigation, route}) => {
+  const category = route.params.category;
+
   return (
     <View style={styles.container}>
-      <ProductsList data={productList} />
+      <ProductsList data={productList} category={category} />
     </View>
   );
 };

@@ -21,6 +21,7 @@ const ProductCard = (props) => {
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.text}>{props.title}</Text>
+        <Text style={styles.text}>${props.price}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -36,15 +37,15 @@ const styles = StyleSheet.create({
     ...spacing.shadow,
   },
   image: {
-    width: 150,
-    height: 150,
-    margin: 40,
+    width: 300,
+    height: 300,
+    margin: 20,
   },
   textContainer: {
     ...spacing.centered,
     padding: 20,
-    minHeight: 105,
-    maxWidth: 230,
+    minHeight: 136,
+    maxWidth: 340,
     backgroundColor: '#3ec1d3',
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
